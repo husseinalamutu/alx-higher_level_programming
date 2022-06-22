@@ -119,7 +119,7 @@ class Square:
         p1 = pos[0]
         p2 = pos[1]
         if s != 0:
-            [print("") for i in range(p2)]
+            [print() for i in range(p2)]
         for i in range(s):
             [print(" ", end="") for j in range(p1)]
             [print("#", end="") for k in range(s)]
