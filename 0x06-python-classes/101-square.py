@@ -97,12 +97,11 @@ class Square:
         """Print the square"""
         s = self.__size
         pos = self.__position
-        p1 = pos[0]
         if s == 0:
             print()
         else:
             for i in range(s):
-                for j in range(p1):
+                for j in range(pos):
                     print(" ", end='')
                 for j in range(s):
                     print("#", end='')
