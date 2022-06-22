@@ -97,12 +97,35 @@ class Square:
         """Print the square"""
         s = self.__size
         pos = self.__position
+        p1 = pos[0]
+        p2 = pos[1]
         if s == 0:
             print()
         else:
+            for ii in range(p2):
+                    print()
             for i in range(s):
-                for j in range(pos):
+                for j in range(p1):
                     print(" ", end='')
                 for j in range(s):
                     print("#", end='')
                 print()
+    
+    def __str__(self):
+
+        """Define the print() representation of a Square."""
+        s = self.__size
+        pos = self.__position
+        p1 = pos[0]
+        p2 = pos[1]
+        if s != 0:
+            [print("") for i in range(p2)]
+        for i in range(s):
+            [print(" ", end="") for j in range(p1)]
+            [print("#", end="") for k in range(s)]
+            if i != s - 1:
+                print("")
+        return ("")
+
+my_square = Square(5, (4, 1))
+print(my_square)

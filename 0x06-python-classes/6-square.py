@@ -110,3 +110,7 @@ class Square:
                 for j in range(s):
                     print("#", end='')
                 print()
+
+
+my_square_2 = Square(3, (1, 0))
+my_square_2.my_print()
