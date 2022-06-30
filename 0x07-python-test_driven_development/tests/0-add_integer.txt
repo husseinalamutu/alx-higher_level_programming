@@ -1,33 +1,61 @@
-# Import the required function
->>> from importlib import import_module
->>> add_integer = import_module('0-add_integer').add_integer
+A test to for adding two inteter
 
-# Valid arguments
->>> add_integer(3, 4)
-7
->>> add_integer(2)
-100
->>> add_integer(1.2, 5.8)
-6
+Import Python module + collections
+>>> import sys
+>>> sys.path.insert(1, '../')
+>>> lib = __import__("0-add_integer")
+>>> add_integer = lib.add_integer
 
-# Invalid arguments
->>> try:
-...	add_integer('3', 3)
-... except TypeError as ex:
-...	print(ex.args[0])
-a must be an integer
->>> try:
-...	add_integer(('3'), 3)
-... except TypeError as ex:
-...	print(ex.args[0])
-a must be an integer
->>> try:
-...	add_integer(3, None)
-... except TypeError as ex:
-...	print(ex.args[0])
-b must be an integer
->>> try:
-... 	add_integer(3, '4')
-... except TypeError as ex:
-...	print(ex.args[0])
-b must be an integer
+# Normal addition test
+>>> add_integer(0)
+98
+>>> add_integer(-1)
+97
+>>> add_integer(10.5)
+108
+
+# Type Errors
+>>> add_integer(10+5j)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer([])
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer({})
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer(set())
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer("")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+# Two input addition type errors
+>>> add_integer(10, 10+5j)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> add_integer(10, [])
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> add_integer(10, {})
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> add_integer(10, set())
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(10, "")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
