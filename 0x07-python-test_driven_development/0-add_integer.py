@@ -6,7 +6,7 @@ def add_integer(a, b=98):
     """Adds two numbers
     Args:
         a - first number input
-        b - second number input
+        b - second number input, equals to 98.
 
     """
     if type(a) not in [int, float]:
@@ -14,3 +14,4 @@ def add_integer(a, b=98):
     if type(b) not in [int, float]:
         raise TypeError("b must be an integer")
     return int(a) + int(b)
+
